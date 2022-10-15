@@ -31,7 +31,7 @@ echo '
                 <?php
 foreach ($sp_cung_loai as $sp_cung_loai) {
     extract($sp_cung_loai);
-    $linksp = "index.php?act=ctsp&&id =" . $id;
+    $linksp = "index.php?act=ctsp&&id=" . $id;
 
     echo '<li><a href="' . $linksp . '"> ' . $name . '</a></li>';
 }
