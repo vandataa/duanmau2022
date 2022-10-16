@@ -24,15 +24,21 @@ if (isset($_GET['act']) && ($_GET['act'])) {
             break;
 
         case 'sanpham':
+            if (isset($_POST['kyw']) && ($_POST['kyw'])>1) {
+                $kyw = $_POST['kyw'];
+            }else{
+                $kyw="";
+            }
             if (isset($_GET['iddm']) && ($_GET['iddm'])>1) {
                 $iddm = $_GET['iddm'];
-                $dssp = loadall_sp('', $iddm);
-                $namedm= load_ten_dm($iddm);
-                include './view/sanpham.php';
+                
             }
             else {
-                include './view/home.php';
+                $iddm = 0;
             }
+            $dssp = loadall_sp($kyw, $iddm);
+                $namedm= load_ten_dm($iddm);
+                include './view/sanpham.php';
             break;
         case 'gy':
             include './view/gopy.php';

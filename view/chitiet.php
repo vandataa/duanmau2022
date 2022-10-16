@@ -19,11 +19,11 @@ echo '
 </div>
 </div>';
 ?>
-        <h1>Bình Luận</h1>
+        <h1 class="bg-blue-100 p-2 mt-2 mb-2 rounded text-[30px]">Bình Luận</h1>
         <form action="" class="">
-            <textarea name="" id="" cols="120" rows="10" class="border"></textarea>
+            <textarea name="" id="" cols="120" rows="4" class="border rounded"></textarea>
             <br>
-            <input type="submit" name="xacnhan" value="Bình luận" id="">
+            <input type="submit" name="xacnhan" class="" value="Bình luận" id="">
         </form>
         <div class="w-[1000px]">
             <h1>Sản phẩm cùng loại </h1>

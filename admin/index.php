@@ -97,8 +97,8 @@ if (isset($_GET['act'])) {
             include './sanpham/update.php';
             break;
         case 'update_sp':
-            if (isset($_POST['update']) && ($_POST['update'])) {
-                $id = $_POST['id'];
+            if (isset($_POST['update']) && isset($_GET['id'])) {
+                $id = $_GET['id'];
                 $iddm = $_POST['iddm'];
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['gia'];
@@ -115,6 +115,7 @@ if (isset($_GET['act'])) {
                 updatesp($id, $iddm, $tensp, $giasp, $mota, $hinh);
                 $thongbao = "Cập nhật Thành công";
             }
+           
             $listdm =loadall_dm();
             $listsp = loadall_sp_home();
             include 'sanpham/list.php';
