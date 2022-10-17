@@ -19,7 +19,7 @@
                     <li><a class="ml-4 p-1 text-white hover:bg-blue-300 hover:rounded hover:text-black" href="index.php?act=ldm">Danh Mục </a></li>
                     <li><a class="ml-4 p-1 text-white hover:bg-blue-300 hover:rounded hover:text-black" href="index.php?act=lsp">Hàng Hóa</a></li>
                     <li><a class="ml-4 p-1 text-white hover:bg-blue-300 hover:rounded hover:text-black" href="index.php?act=dskh">Khách Hàng</a></li>
-                    <li><a class="ml-4 p-1 text-white hover:bg-blue-300 hover:rounded hover:text-black" href="index.php?act=dsbl">Bình Luận</a></li>
+                    <li><a class="ml-4 p-1 text-white hover:bg-blue-300 hover:rounded hover:text-black" href="index.php?act=lbl">Bình Luận</a></li>
                     <li><a class="ml-4 p-1 text-white hover:bg-blue-300 hover:rounded hover:text-black" href="index.php?act=tk">Thống Kê</a></li>
                 </ul>
         </div>

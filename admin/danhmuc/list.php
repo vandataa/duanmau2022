@@ -2,7 +2,7 @@
     <div class="mx-auto max-w-7xl">
         <table class="mx-auto">
             <thead class="mb-3">
-                <tr class="bg-blue-400">
+                <tr class="bg-blue-400 m-3">
                     <th class="w-[170px]">Mã Loại</th>
                     <th class="w-[200px]">Tên danh mục</th>
                     <th></th>

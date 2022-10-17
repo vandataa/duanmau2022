@@ -18,14 +18,17 @@ echo '
     </div>
 </div>
 </div>';
-?>
-        <h1 class="bg-blue-100 p-2 mt-2 mb-2 rounded text-[30px]">Bình Luận</h1>
-        <form action="" class="">
-            <textarea name="" id="" cols="120" rows="4" class="border rounded"></textarea>
-            <br>
-            <input type="submit" name="xacnhan" class="" value="Bình luận" id="">
-        </form>
-        <div class="w-[1000px]">
+?>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#binhluan").load("view/binhluan/binhluanform.php", {idpro:<?=$id?>});  
+});
+
+</script>
+        <div id="binhluan">
+
+        </div>
             <h1>Sản phẩm cùng loại </h1>
             <div class="">
                 <?php
