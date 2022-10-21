@@ -2,12 +2,11 @@
     <div class="sanpham max-w-5xl mr-2">
         <div class="img mb-2">
             <img class="rounded" src="./img/ahMaDme.jpeg" alt="">
-
+            
         </div>
 
         <div class="grid grid-cols-3 gap-2 w-[1000px]">
             <?php
-
 foreach ($spnew as $spn) {
     extract($spn);
     $hinh = $img_pad . $img;
@@ -16,9 +15,15 @@ foreach ($spnew as $spn) {
         <div class="sp border border-slate-800">
             <a href="' . $ctsp . '"><img class="mx-auto w-[200px] h-[220px] mt-2" src="' . $hinh . '" alt=""></a>
             <a href="' . $ctsp . '"><h1 class="text-center text-[18px] font-bold">' . $name . '</h1></a>
-            <h1 class="text-center text-[18px] font-bold text-orange-400">' . $price . ' $</h1>
-            <button class="ml-[80px] bg-blue-300 p-[3px] rounded mb-[10px] text-white hover:bg-sky-700 hover:text-orange-400">Mua</button> 
-            <button class="ml-[10px] bg-blue-300 p-[3px] rounded mb-[10px] text-white hover:bg-sky-700 hover:text-orange-400">Thêm Giỏ hàng</button>
+            <h1 class="text-center text-[18px] font-bold text-orange-400">' . $price . ' $</h1> 
+            <form action="index.php?act=addtocard" method="POST">
+                <input type="hidden" name="id" value="'.$id.'">
+                <input type="hidden" name="name" value="'.$name.'">
+                <input type="hidden" name="img" value="'.$img.'">
+                <input type="hidden" name="price" value="'.$price.'">
+                <button class="ml-[80px] bg-blue-300 p-[3px] rounded mb-[10px] text-white hover:bg-sky-700 hover:text-orange-400">Mua</button> 
+                <input type="submit" class="ml-[10px] bg-blue-300 p-[3px] rounded mb-[10px] text-white hover:bg-sky-700 hover:text-orange-400" name="addcart" value="Thêm Giỏ hàng">
+            </form>
         </div>';
 }
 ?>

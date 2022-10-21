@@ -9,7 +9,7 @@ include './modem/taikhoan.php';
 $dmm = loadall_dm();
 $spnew = loadall_sp_home();
 $dstop10 = load_sp_top10();
-
+if (!isset($_SESSION['mycart']))$_SESSION['mycart'] = [];
 if (isset($_GET['act']) && ($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -24,21 +24,20 @@ if (isset($_GET['act']) && ($_GET['act'])) {
             break;
 
         case 'sanpham':
-            if (isset($_POST['kyw']) && ($_POST['kyw'])>1) {
+            if (isset($_POST['kyw']) && ($_POST['kyw']) > 1) {
                 $kyw = $_POST['kyw'];
-            }else{
-                $kyw="";
+            } else {
+                $kyw = "";
             }
-            if (isset($_GET['iddm']) && ($_GET['iddm'])>1) {
+            if (isset($_GET['iddm']) && ($_GET['iddm']) > 1) {
                 $iddm = $_GET['iddm'];
-                
-            }
-            else {
+
+            } else {
                 $iddm = 0;
             }
             $dssp = loadall_sp($kyw, $iddm);
-                $namedm= load_ten_dm($iddm);
-                include './view/sanpham.php';
+            $namedm = load_ten_dm($iddm);
+            include './view/sanpham.php';
             break;
         case 'gy':
             include './view/gopy.php';
@@ -50,8 +49,7 @@ if (isset($_GET['act']) && ($_GET['act'])) {
                 extract($onesp);
                 $sp_cung_loai = sp_cung_loai($id, $iddm);
                 include './view/chitiet.php';
-            }
-            else {
+            } else {
                 include './view/home.php';
             }
             break;
@@ -63,8 +61,7 @@ if (isset($_GET['act']) && ($_GET['act'])) {
                 $check_email = check_email($email);
                 if (is_array($check_email)) {
                     $thongbao = "Mật khẩu của bạn là :" . $check_email['pass'];
-                }
-                else {
+                } else {
                     $thongbao = "Email này không tồn tại";
                 }
             }
@@ -102,15 +99,30 @@ if (isset($_GET['act']) && ($_GET['act'])) {
                 if (is_array($checkuser)) {
                     $_SESSION['user'] = $checkuser;
                     $yourURL = "index.php";
-                    echo ("<script>location.href='$yourURL'</script>");
-                }
-                else {
+                    echo ("<script>location.href =' $yourURL '</script>");
+                } else {
                     $thongbao = "Không tìm thấy tài khoản";
                     $yourURL = "index.php";
-                    echo ("<script>location.href = '$yourURL'</script>");
+                    echo ("<script>location.href = ' $yourURL '</script>");
                 }
 
             }
+            break;
+        case 'addtocart':
+            if (isset($_POST['addcart']) && ($_POST['addcart'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $img = $_POST['img'];
+                $price = $_POST['price'];
+                $soluong = 1;
+                $ttien = $price * $soluong;
+                $spadd = [$id,$name,$img,$price,$soluong,$ttien];
+                array_push($_SESSION['mycart'],$spadd);
+            }
+            include '.cart/viewcart.php';
+            break;
+        case 'gh':
+            include '.cart/viewcart.php';
             break;
         case 'thoat':
             session_unset();
@@ -120,8 +132,7 @@ if (isset($_GET['act']) && ($_GET['act'])) {
             include './view/home.php';
             break;
     }
-}
-else {
+} else {
     include './view/home.php';
 }
 include './view/phai.php';

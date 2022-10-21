@@ -1,6 +1,6 @@
 <div class="flex ">
     <div class="thongtin max-w-5xl w-full ">
-    <div class="max-w-4xl  mt-6 bg-gray-300 rounded-[30px]">
+    <div class="max-w-6xl w-[1000px]  mt-6 bg-gray-300 rounded-[30px]">
         <h1 class="text-center text-[30px] font-bold text-blue-600 pt-[30px]">Thông tin tài khoản</h1>
         
         <div class=" max-w-2xl mx-auto ml-[300px]">

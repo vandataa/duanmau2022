@@ -1,6 +1,7 @@
 <div class="mx-auto max-w-7xl bg-white p-3 mt-2 rounded ">
 <div class="mx-auto max-w-7xl">
     <form action="index.php?act=lsp" method="post">
+        
         <input type="text" name="kyw" id="">
         <select name="iddm" id="">
             <option value="0" selected>--Tất cả--</option>

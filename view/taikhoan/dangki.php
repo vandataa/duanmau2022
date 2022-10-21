@@ -1,7 +1,7 @@
 <div class="flex">
     <div class="thongtin max-w-5xl w-full ">
         
-<div class="mt-6 bg-gray-300 rounded-[30px] w-[800px] ">
+<div class="mt-6 bg-gray-300 rounded-[30px] w-[1000px] ">
     <h1 class="text-center text-[30px] font-bold text-blue-600 pt-[30px]">Đăng kí tài khoản</h1>
     <form action="index.php?act=dangki" method="POST">
         <div class=" max-w-2xl mx-auto ml-[300px]">

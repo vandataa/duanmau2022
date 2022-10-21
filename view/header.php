@@ -22,7 +22,7 @@
                     <li><a class="ml-4 p-1 text-white hover:bg-blue-300 hover:rounded hover:text-black" href="index.php?act=sp">Sản Phẩm</a></li>
                 </ul>
                 <div class="giohang flex m-4 hover:bg-blue-300 hover:rounded" >
-                    <span><a class="pl-4 text-white pr-3" href="index.php?act=mh">Giỏ hàng</a></span> 
+                    <span><a class="pl-4 text-white pr-3" href="index.php?act=gh">Giỏ hàng</a></span> 
                     <svg class="mt-1 text-white mr-1" xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor" class="bi bi-basket-fill" viewBox="0 0 16 16">
                         <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
                       </svg>
