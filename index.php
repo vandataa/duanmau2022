@@ -9,7 +9,8 @@ include './modem/taikhoan.php';
 $dmm = loadall_dm();
 $spnew = loadall_sp_home();
 $dstop10 = load_sp_top10();
-if (!isset($_SESSION['mycart']))$_SESSION['mycart'] = [];
+if (!isset($_SESSION['mycart']))
+    $_SESSION['mycart'] = [];
 if (isset($_GET['act']) && ($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -109,20 +110,20 @@ if (isset($_GET['act']) && ($_GET['act'])) {
             }
             break;
         case 'addtocart':
-            if (isset($_POST['addcart']) && ($_POST['addcart'])) {
+            if (isset($_POST['addtocart'])) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
                 $img = $_POST['img'];
                 $price = $_POST['price'];
                 $soluong = 1;
                 $ttien = $price * $soluong;
-                $spadd = [$id,$name,$img,$price,$soluong,$ttien];
-                array_push($_SESSION['mycart'],$spadd);
+                $spadd = [$id, $name, $img, $price, $soluong, $ttien];
+                array_push($_SESSION['mycart'], $spadd);
             }
-            include '.cart/viewcart.php';
+            include './view/cart/viewcart.php';
             break;
         case 'gh':
-            include '.cart/viewcart.php';
+            include './view/cart/viewcart.php';
             break;
         case 'thoat':
             session_unset();
