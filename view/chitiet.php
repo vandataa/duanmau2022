@@ -34,7 +34,7 @@ echo '
         });
 
     </script>
-    <div id="binhluan">
+    <div id="binhluan" class="rounded">
 
     </div>
     <h1>Sản phẩm cùng loại </h1>

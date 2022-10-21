@@ -18,7 +18,7 @@ $dsbl = loadall_binhluan($idpro);
 <body>
     <div class="binhluan">
         <h1 class="bg-blue-100 p-2 mt-2 mb-2 rounded text-[30px]">Bình Luận</h1>
-        <div class="noidung bg-white mt-3 w-[990px] justify-between ">
+        <div class="rounded bg-white mt-3 w-[990px] justify-between ">
             <table>
                 <?php
 foreach ($dsbl as $bl) {
@@ -32,7 +32,7 @@ foreach ($dsbl as $bl) {
                 ?>
             </table>
         </div>
-        <div class="formbinhluan bg-white mt-3 h-10">
+        <div class="formbinhluan bg-white mt-3 h-10 rounded">
             <?php
 if (isset($_SESSION['user']) && ($_SESSION['user'])) { ?>
             <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
@@ -42,7 +42,9 @@ if (isset($_SESSION['user']) && ($_SESSION['user'])) { ?>
             </form>
             <?php
 } else {
-    echo 'Bạn cần đăng nhập để bình luận';
+    echo '
+    <h1 class="text-center p-2">Bạn cần đăng nhập để bình luận</h1>
+    ';
 ?>
             <?php
 }
