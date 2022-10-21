@@ -7,6 +7,8 @@
 <form action="index.php?act=edit_tk" method="post">
             <h1>Tên đăng nhâp</h1>
             <input type="text" name="user" id="user" value="<?=$user?>">
+            <h1>Tên khách hàng</h1>
+            <input type="text" name="name" id="name" value="<?=$name?>">
             <h1>Mật Khẩu</h1>
             <input type="text" name="pass" id="pass" value="<?=$pass?>">
             <h1>Địa chỉ</h1>

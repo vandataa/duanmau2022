@@ -14,8 +14,8 @@ function check_email($email){
     $sp = pdo_query_one($sql);
     return $sp;
 }
-function  update_taikhoan($user , $pass, $phone,$diachi,$email,$id){
-    $sql = "UPDATE `taikhoan` set user  = '".$user."', pass = '".$pass."',phone = '".$phone."', diachi = '".$diachi."', email = '".$email."' WHERE id = " .$id;
+function  update_taikhoan($user , $pass,$name, $phone,$diachi,$email,$id){
+    $sql = "UPDATE `taikhoan` set user  = '".$user."',name = '".$name."', pass = '".$pass."',phone = '".$phone."', diachi = '".$diachi."', email = '".$email."' WHERE id = " .$id;
     pdo_execute($sql);
 }
 function loadall_tk(){

@@ -6,6 +6,8 @@ include './modem/danhmuc.php';
 include './view/header.php';
 include 'global.php';
 include './modem/taikhoan.php';
+include './modem/cart.php';
+
 $dmm = loadall_dm();
 $spnew = loadall_sp_home();
 $dstop10 = load_sp_top10();
@@ -72,11 +74,12 @@ if (isset($_GET['act']) && ($_GET['act'])) {
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $id = $_POST['id'];
                 $user = $_POST['user'];
+                $name = $_POST['name'];
                 $pass = $_POST['pass'];
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
                 $diachi = $_POST['diachi'];
-                update_taikhoan($user, $pass, $phone, $diachi, $email, $id);
+                update_taikhoan($user, $pass, $name, $phone, $diachi, $email, $id);
                 $_SESSION['user'] = check_user($user, $pass);
                 $thongbao = "Update thành công";
             }
@@ -110,7 +113,7 @@ if (isset($_GET['act']) && ($_GET['act'])) {
             }
             break;
         case 'addtocart':
-            if (isset($_POST['addtocart'])) {
+            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
                 $img = $_POST['img'];
@@ -124,6 +127,28 @@ if (isset($_GET['act']) && ($_GET['act'])) {
             break;
         case 'gh':
             include './view/cart/viewcart.php';
+            break;
+        case 'delete_cart':
+            if (isset($_GET['idcart'])) {
+                array_splice($_SESSION['mycart'], $_GET['idcart'], 1);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+            header('location:index.php?act=gh');
+            break;
+        case 'dathang':
+            include './view/cart/bill.php';
+            break;
+        case 'billcomfirm':
+            if(isset($_POST['dathang']) && $_POST['dathang']){
+                $name = $_POST['name'];
+                $address =$_POST['address'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $ngaydathang = date('d/m/Y');
+                $tongdonhang = tongdonhang();
+            }
+            include './view/cart/billcomfirm.php';
             break;
         case 'thoat':
             session_unset();

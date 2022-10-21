@@ -150,11 +150,12 @@ if (isset($_GET['act'])) {
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $id = $_POST['id'];
                 $user = $_POST['user'];
+                $name = $_POST['name'];
                 $pass = $_POST['pass'];
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
                 $diachi = $_POST['diachi'];
-                update_taikhoan($user, $pass, $phone, $diachi, $email, $id);
+                update_taikhoan($user, $pass,$name, $phone, $diachi, $email, $id);
                 $thongbao = "Cập nhật Thành công";
             }
             $listtk = loadall_tk();

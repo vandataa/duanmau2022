@@ -3,7 +3,7 @@ session_start();
 $idpro = $_REQUEST['idpro'];
 include '../../modem/pdo.php';
 include '../../modem/binhluan.php';
-$dsbl = loadall_binhluan();
+$dsbl = loadall_binhluan($idpro);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,51 +16,50 @@ $dsbl = loadall_binhluan();
 </head>
 
 <body>
-   <div class="binhluan">
-   <h1 class="bg-blue-100 p-2 mt-2 mb-2 rounded text-[30px]">Bình Luận</h1>
-    <div class="noidung bg-white mt-3 w-[990px] justify-between ">
-        <table>
-        <?php 
-        foreach($dsbl as $bl){
-            extract($bl);
-            echo '<tr ">
-            <td ">'.$noidung.' </td>
-            <td ">'.$idtk.' </td>
-            <td ">'.$ngaybinhluan.' </td>
-            
-            </tr>'; 
-        }
-        ?>
-        </table>
-    </div>
-   <div class="formbinhluan bg-white mt-3 h-10">
-        <?php 
-        if(isset($_SESSION['user'])&&($_SESSION['user'])){?>
-        <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">
-        <input type="hidden" name="idpro" value="<?=$idpro?>">
-        <input type="text" name="noidung" class="w-[400px] border ml-2 mt-2" id="">
-        <input type="submit" name="binhluan" class=" p-1 bg-blue-400 text-white" value="Bình luận" id="">
-        </form>
-        <?php   
-        }else{
-            echo 'Bạn cần đăng nhập để bình luận';
-        ?>
+    <div class="binhluan">
+        <h1 class="bg-blue-100 p-2 mt-2 mb-2 rounded text-[30px]">Bình Luận</h1>
+        <div class="noidung bg-white mt-3 w-[990px] justify-between ">
+            <table>
+                <?php
+foreach ($dsbl as $bl) {
+    extract($bl);
+    echo '<tr ">
+                <td class=" p-2 w-[800px]">' . $noidung . ' </td>
+                <td class="w-[50px]">' . $idtk . ' </td>
+                <td class="w-[200px]">' . $ngaybinhluan . ' </td>
+                </tr>';
+                }
+                ?>
+            </table>
+        </div>
+        <div class="formbinhluan bg-white mt-3 h-10">
+            <?php
+if (isset($_SESSION['user']) && ($_SESSION['user'])) { ?>
+            <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+                <input type="hidden" name="idpro" value="<?= $idpro ?>">
+                <input type="text" name="noidung" class="w-[400px] border ml-2 mt-2" id="">
+                <input type="submit" name="binhluan" class=" p-1 bg-blue-400 text-white" value="Bình luận" id="">
+            </form>
+            <?php
+} else {
+    echo 'Bạn cần đăng nhập để bình luận';
+?>
+            <?php
+}
+?>
+
+        </div>
         <?php
-        }
-        ?>
-    
-   </div>
-<?php 
-if(isset($_POST['binhluan'])&&($_POST['binhluan'])){
+if (isset($_POST['binhluan']) && ($_POST['binhluan'])) {
     $noidung = $_POST['noidung'];
     $idpro = $_POST['idpro'];
     $idtk = $_SESSION['user']['id'];
     $ngaybinhluan = date('h:i:sa d/m/Y');
-    insert_binhluan($noidung,$idtk,$idpro,$ngaybinhluan);
-    header('location:'.$_SERVER['HTTP_REFERER']);
+    insert_binhluan($noidung, $idtk, $idpro, $ngaybinhluan);
+    header('location:' . $_SERVER['HTTP_REFERER']);
 }
 ?>
-   </div>
+    </div>
 </body>
 
 </html>

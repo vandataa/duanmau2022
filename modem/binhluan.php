@@ -3,8 +3,8 @@ function insert_binhluan($noidung,$idtk,$idpro,$ngaybinhluan){
     $sql = "INSERT INTO `binhluan`(`noidung`,`idtk`,`idpro`,`ngaybinhluan`) value ('$noidung','$idtk','$idpro','$ngaybinhluan')";
     pdo_execute($sql);
 }
-function loadall_binhluan(){
-    $sql = "SELECT * FROM `binhluan` order by id desc";
+function loadall_binhluan($idpro){
+    $sql = "SELECT * FROM `binhluan` where '.$idpro.' order by id desc";
     $listbl = pdo_query($sql);
     return $listbl;
 }

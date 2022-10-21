@@ -17,7 +17,7 @@ foreach ($spnew as $spn) {
             <a href="' . $ctsp . '"><img class="mx-auto w-[200px] h-[220px] mt-2" src="' . $hinh . '" alt=""></a>
             <a href="' . $ctsp . '"><h1 class="text-center text-[18px] font-bold">' . $name . '</h1></a>
             <h1 class="text-center text-[18px] font-bold text-orange-400">' . $price . ' $</h1> 
-            <form action="index.php?act=addtocard" method="POST">
+            <form action="index.php?act=addtocart" method="POST">
                 <input type="hidden" name="id" value="'.$id.'">
                 <input type="hidden" name="name" value="'.$name.'">
                 <input type="hidden" name="img" value="'.$img.'">
