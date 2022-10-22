@@ -67,7 +67,7 @@ foreach ($dmm as $dm) {
         <div class="search border-t bg-gray-300 ">
             <h1 class=" p-3">Tìm Kiếm</h1>
             <form action="index.php?act=sanpham" method="post">
-                <input class="ml-2 w-[220px]" type="text" name="kyw" id="search" placeholder="Nhập gì đó đi">
+                <input class="ml-2 w-[220px]" type="text" name="kyw" placeholder="Nhập gì đó đi">
                 <input type="submit" class="bg-yellow-200 text-brow-200 ml-[70px] mt-[10px] mb-[10px] p-1 rounded hover:bg-red-300 hover:text-white"  name="search" value="Tìm kiếm">
             </form>
         </div>
