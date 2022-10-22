@@ -1,6 +1,6 @@
 <div class="flex">
-    <div class="xacnhan w-[1000px]">
-        <h1>Cảm ơn quý khách đã đặt hàng</h1>
+    <div class="xacnhan w-[1000px] bg-white mt-2 rounded p-2">
+        <h1 class="bg-gray-200 text-[17px] text-center">Cảm ơn quý khách đã đặt hàng</h1>
         <div class="thongtindonhang">
             <?php
 if (isset($billct) && (is_array($billct))) {
@@ -8,10 +8,10 @@ if (isset($billct) && (is_array($billct))) {
 }
 ?>
             <div class="donhang">
-                <h1>Thông tin đơn hàng</h1>
+                <h1 class="text-[18px] bg-gray-200">Thông tin đơn hàng</h1>
                 <ul>
                     <li>Mã đơn hàng : DAM-
-                        <?= $bill['idbill'] ?>
+                        <?= $bill['id'] ?>
                     </li>
                     <li>Ngày Đặt hàng :
                         <?= $bill['ngaydathang'] ?>
@@ -20,7 +20,7 @@ if (isset($billct) && (is_array($billct))) {
                         <?= $bill['total'] ?>
                     </li>
                     <li>Phương thức thanh toán :
-                        <?= $bill['total'] ?>
+                        <?= $bill['pttt'] ?>
                     </li>
                 </ul>
             </div>

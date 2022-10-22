@@ -63,13 +63,12 @@ function show_bill_ct($listbill)
 </tr> ';
 
     foreach ($listbill as $cart) {
-
-$hinh = $img_pad . $cart['img'];
+$hinh = $img_pad.$cart['img'];
 $tong += $cart['thanhtien'];
         echo '
 <tr>
     <td>' . $stt . '</td>
-    <td><img src="' . $hinh . '" class="w-[60px] h-auto" alt=""></td>
+    <td><img src="'.$hinh.'" class="w-[60px] h-auto" alt=""></td>
     <td>' . $cart['name'] . '</td>
     <td>' . $cart['price'] . '</td>
     <td>' . $cart['soluong'] . '</td>
@@ -107,7 +106,7 @@ function insert_bill($name, $address, $tel, $email,$pttt, $ngaydathang, $total)
     pdo_execute($sql);
 }
 function loadone_bill($id){
-    $sql = "SELECT * FROM `bill` WHERE idbill=".$id;
+    $sql = "SELECT * FROM `bill` WHERE id=".$id;
     $bill = pdo_query_one($sql);
     return $bill;
 }
