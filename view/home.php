@@ -22,7 +22,7 @@ foreach ($spnew as $spn) {
                 <input type="hidden" name="name" value="'.$name.'">
                 <input type="hidden" name="img" value="'.$img.'">
                 <input type="hidden" name="price" value="'.$price.'">
-                <button class="ml-[80px] bg-blue-300 p-[3px] rounded mb-[10px] text-white hover:bg-sky-700 hover:text-orange-400">Mua</button> 
+                <input type="submit" class="ml-[90px] bg-blue-300 p-[3px] rounded mb-[10px] text-white hover:bg-sky-700 hover:text-orange-400" name="addtocart" value="Mua">
                 <input type="submit" class="ml-[10px] bg-blue-300 p-[3px] rounded mb-[10px] text-white hover:bg-sky-700 hover:text-orange-400" name="addtocart" value="Thêm Giỏ hàng">
             </form>
         </div>';

@@ -1,7 +1,7 @@
 <?php 
 function viewcart(){
     global $img_pad;
-    echo '<tr>
+    echo '  <tr>
                 <td class="w-[10px]">Stt</td>
                 <td class="w-[80px]">Hình</td>
                 <td class="w-[90px]">Sản phẩm </td>
@@ -47,7 +47,7 @@ function tongdonhang(){
     return $tong;
 }
 function insert_bill($name,$email,$address,$tel,$ngaydathang,$tongdonhang,$total){
-    $sql = "INSERT INTO `bill`(name) value ('$name','$email','$address','$tel','$ngaydathang','$tongdonhang','$total')";
+    $sql = "INSERT INTO `bill`(name,email,address,tel,) value ('$name','$email','$address','$tel','$ngaydathang','$tongdonhang','$total')";
     pdo_execute($sql);
 }
 ?>

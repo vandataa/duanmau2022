@@ -3,7 +3,7 @@ session_start();
 $idpro = $_REQUEST['idpro'];
 include '../../modem/pdo.php';
 include '../../modem/binhluan.php';
-$dsbl = loadall_binhluan($idpro);
+$dsbl = loadall_binhluan();
 ?>
 <!DOCTYPE html>
 <html lang="en">

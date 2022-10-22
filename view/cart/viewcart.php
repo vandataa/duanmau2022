@@ -4,9 +4,11 @@
         <table class="ml-2 border">
             <?php
 viewcart()
-?>
+    ?>
 
         </table>
-        <a href="index.php?act=dathang"><input class="p-2 bg-blue-200 rounded ml-3 mt-2 text-black " type="button" value="Đặt hàng"></a>
-        <a href="index.php?act=delete_cart"><input  class="p-2 bg-blue-200 rounded ml-3 mt-2 text-black " type="button" value="Xóa giỏ hàng"></a>
+        <a href="index.php?act=dathang"><input class="p-2 bg-blue-200 rounded ml-3 mt-2 text-black " type="button"
+                value="Đặt hàng"></a>
+        <a href="index.php?act=delete_cart"><input class="p-2 bg-blue-200 rounded ml-3 mt-2 text-black " type="button"
+                value="Xóa giỏ hàng"></a>
     </div>
