@@ -35,7 +35,7 @@
             $xoasp = "index.php?act=xoasp&id=" . $id;
             $hinhpad="../uploads/".$img;
             if(is_file($hinhpad)){
-                $hinh = "<img src='".$hinhpad."' width='400'>";
+                $hinh = "<img src='".$hinhpad."' class='w-[200px] h-auto' >";
             }
             
             else{

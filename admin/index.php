@@ -5,6 +5,7 @@ include '../modem/danhmuc.php';
 include '../modem/sanpham.php';
 include '../modem/taikhoan.php';
 include '../modem/binhluan.php';
+include '../modem/donhang.php';
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -155,7 +156,7 @@ if (isset($_GET['act'])) {
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
                 $diachi = $_POST['diachi'];
-                update_taikhoan($user, $pass,$name, $phone, $diachi, $email, $id);
+                update_taikhoan($user, $pass, $name, $phone, $diachi, $email, $id);
                 $thongbao = "Cập nhật Thành công";
             }
             $listtk = loadall_tk();
@@ -172,6 +173,15 @@ if (isset($_GET['act'])) {
             }
             $listbl = loadall_binhluan();
             include 'binhluan/list.php';
+            break;
+        case 'donhang':
+            $listdh = loadall_donhang();
+            include 'donhang/list.php';
+            break;
+        case 'thongke':
+
+            $listhongke = loadall_thongke();
+            include "thongke/list.php";
             break;
         default:
             include 'home.php';

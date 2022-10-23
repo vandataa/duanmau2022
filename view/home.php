@@ -1,11 +1,11 @@
 <div class="flex mt-2">
     <div class="sanpham max-w-5xl mr-2">
         <div class="img mb-2">
-            <img class="rounded" src="./img/ahMaDme.jpeg" alt="">
+            <img class="rounded" src="./uploads/ahMaDme.jpeg" alt="">
             
         </div>
 
-        <div class="grid grid-cols-3 gap-2 w-[1000px]">
+        <div class="grid grid-cols-3 gap-2 w-[1000px] bg-white p-3">
             <?php
 
 foreach ($spnew as $spn) {
@@ -14,7 +14,7 @@ foreach ($spnew as $spn) {
     $ctsp = "index.php?act=ctsp&id=" . $id;
     echo '
         <div class="sp border border-slate-800">
-            <a href="' . $ctsp . '"><img class="mx-auto w-[200px] h-[220px] mt-2" src="' . $hinh . '" alt=""></a>
+            <a href="' . $ctsp . '"><img class="mx-auto w-[200px] h-auto mt-2" src="' . $hinh . '" alt=""></a>
             <a href="' . $ctsp . '"><h1 class="text-center text-[18px] font-bold">' . $name . '</h1></a>
             <h1 class="text-center text-[18px] font-bold text-orange-400">' . $price . ' $</h1> 
             <form action="index.php?act=addtocart" method="POST">
