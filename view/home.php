@@ -2,7 +2,9 @@
     <div class="sanpham max-w-5xl mr-2">
         <div class="img mb-2">
             <img class="rounded" src="./uploads/ahMaDme.jpeg" alt="">
-            
+            <div class="">
+                
+            </div>
         </div>
 
         <div class="grid grid-cols-3 gap-2 w-[1000px] bg-white p-3">

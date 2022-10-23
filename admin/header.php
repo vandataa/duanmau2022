@@ -23,6 +23,7 @@
                     <li><a class="ml-4 p-1 text-white hover:bg-blue-300 hover:rounded hover:text-black" href="index.php?act=thongke">Thống Kê</a></li>
                     <li><a class="ml-4 p-1 text-white hover:bg-blue-300 hover:rounded hover:text-black" href="index.php?act=donhang">Đơn hàng</a></li>
                 </ul>
+                <li><a class="m-4 mt-3 p-1 text-white hover:bg-blue-300 hover:rounded hover:text-black" href="index.php?act=thoat">Thoát</a></li>
         </div>
      
     </div>   

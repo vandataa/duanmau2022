@@ -27,7 +27,7 @@ if (isset($_GET['act']) && ($_GET['act'])) {
             break;
 
         case 'sanpham':
-            if (isset($_POST['kyw']) && ($_POST['kyw']) > 1) {
+            if (isset($_POST['kyw']) && ($_POST['kyw']) !='') {
                 $kyw = $_POST['kyw'];
             } else {
                 $kyw = "";
